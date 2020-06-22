@@ -13,6 +13,7 @@
 x64/
 [Bb]in/
 [Oo]bj/
+.idea/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -131,3 +132,4 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+/WypozyczalniaPojazdów.sln
