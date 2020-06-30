@@ -4,6 +4,14 @@ namespace WypozyczalniaPojazdów
 {
     public class Program
     {
+        
+        /*
+         * 
+         * Projekt stworzyli:
+         * Przemysław Psuja
+         * Patryk Podyma
+         * 
+         */
         public static void Main(string[] args)
         {
             Wypozyczalnia w = new Wypozyczalnia();
