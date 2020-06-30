@@ -1,31 +1,59 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.Drawing;
 
 namespace WypozyczalniaPojazdów
 {
-    internal class Program : Form
+    public class Program
     {
-        public Button B1;
-        public DataGridView DataGrid;
-        public Program()
-        {
-            DataGrid = new DataGridView();
-            DataGrid.Size = new Size(300, 150);
-            B1 = new Button();
-            B1.Size = new Size(100, 40);
-            B1.Location = new Point(50, 150);
-            B1.Text = "Hej";
-            Controls.Add(DataGrid);
-            Controls.Add(B1);
-        }
-
-        [STAThread]
         public static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.Run(new Program());
+            Wypozyczalnia w = new Wypozyczalnia();
+     
+            char c;
+
+            do
+            {
+                c = Menu();
+                switch (c)
+                {
+                    case 'a':
+                    case 'A':
+                        w.DodajNowyPojazd();
+                        Console.ReadLine();
+                        break;
+                    case 'b':
+                    case 'B':
+                        w.WypiszPojazdy();
+                        Console.WriteLine("Podaj ID pojazdu który chcesz wypożyczyć.");
+                        int i = Int32.Parse(Console.ReadLine());
+                        w.Wypozycz(i);
+                        Console.ReadLine();
+                        break;
+                    case 'c':
+                    case 'C':
+                        w.WypiszPojazdy();
+                        Console.WriteLine("Podaj ID pojazdu który chcesz zwrócić.");
+                        int j = Int32.Parse(Console.ReadLine());
+                        w.Zwroc(j);
+                        Console.ReadLine();
+                        break;
+                    case 'd':
+                    case 'D':
+                        w.WypiszPojazdy();
+                        Console.ReadLine();
+                        break;
+                }
+            } while (!(c == 'k' || c == 'K'));
+        }
+
+        public static char Menu()
+        {
+            Console.Clear();
+            Console.WriteLine("A - Dodaj pojazd");
+            Console.WriteLine("B - Wypożycz pojazd");
+            Console.WriteLine("C - Zwróć pojazd");
+            Console.WriteLine("D - Wypisz wszystkie pojazdy");
+            Console.WriteLine("K - Koniec");
+            return Console.ReadKey().KeyChar;
         }
     }
 }

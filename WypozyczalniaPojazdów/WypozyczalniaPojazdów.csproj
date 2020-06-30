@@ -40,13 +40,18 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="enum\RodzajNadwozia.cs" />
-        <Compile Include="enum\RodzajPaliwa.cs" />
-        <Compile Include="enum\RodzajPojazdu.cs" />
+        <Compile Include="Enum\RodzajPojazdu.cs" />
+        <Compile Include="Enum\StanPojazdu.cs" />
+        <Compile Include="Hulajnoga.cs" />
+        <Compile Include="Interfaces\IObslugaWypozyczalni.cs" />
+        <Compile Include="Klient.cs" />
+        <Compile Include="Motocykl.cs" />
         <Compile Include="Pojazd.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Rower.cs" />
         <Compile Include="Samochód.cs" />
+        <Compile Include="Wypozyczalnia.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,25 +1,28 @@
+using System;
+
 namespace WypozyczalniaPojazdów
 {
     public class Samochód : Pojazd
     {
-        private RodzajNadwozia RodzajNadwozia { set; get; }
-        private RodzajPaliwa RodzajPaliwa { set; get; }
+        private string RodzajNadwozia { set; get; }
+        private string RodzajPaliwa { set; get; }
         private int PojemnoscSilnika { set; get; }
         private int Moc { set; get; }
 
-        public Samochód(string marka, string model, RodzajPojazdu rodzajPojazdu, RodzajNadwozia rodzajNadwozia, 
-            RodzajPaliwa rodzajPaliwa, int pojemnoscSilnika, int moc) : base(marka, model, rodzajPojazdu)
+        public Samochód(string marka, string model, RodzajPojazdu rodzajPojazdu, string rodzajNadwozia, 
+            string rodzajPaliwa, int pojemnoscSilnika, int moc) : base(marka, model, rodzajPojazdu)
         {
+            
             RodzajNadwozia = rodzajNadwozia;
             RodzajPaliwa = rodzajPaliwa;
             PojemnoscSilnika = pojemnoscSilnika;
             Moc = moc;
         }
 
-        public override string WypiszInfo()
+        public override void WypiszInfo()
         {
-            return ("{0} {1} {2} {3} {4} {5} {6} {7} {8}", Id, Marka, Model, RodzajPojazdu, RodzajNadwozia,
-                RodzajPaliwa, PojemnoscSilnika, Moc).ToString();
+            Console.WriteLine("Id: {0}, {1}, {2}, {3}, {4}, {5}, Paliwo: {6}",
+                Id, RodzajPojazdu, StanPojazdu, Marka, Model, RodzajNadwozia, RodzajPaliwa);
         }
     }
 }
